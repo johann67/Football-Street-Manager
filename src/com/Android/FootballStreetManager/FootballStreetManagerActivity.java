@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class FootballStreetManagerActivity extends Activity implements View.OnClickListener {
+public class FootballStreetManagerActivity extends Activity {
 	private Button ButtonNew;
 	private Button ButtonLoad;
 	
@@ -17,19 +17,16 @@ public class FootballStreetManagerActivity extends Activity implements View.OnCl
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
-        ButtonNew = (Button)findViewById(R.id.nouvelle_partie);
-        ButtonLoad = (Button)findViewById(R.id.charger_partie);
-        
-        ButtonNew.setOnClickListener(this);
-        ButtonLoad.setOnClickListener(this);
+
         //chris ne sait pas coder
     }
     
-    public void onClick(View v) {
-    	if (v == ButtonNew) {
-    		Intent intentNew = new Intent(this, NewEquipe.class);
-    		startActivity(intentNew);
-    	}
+    public void onClickNouvellePartie(View v) {
+    	Intent intentNew = new Intent(this, NewEquipe.class);
+		startActivity(intentNew);
+    }
+    
+    public void onClickChargerPartie(View v) {
+
     }
 }

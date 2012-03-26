@@ -4,44 +4,49 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background" >
 
-        <Button
-            android:id="@+id/charger_partie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="62dp"
-            android:background="@android:color/transparent"
-            android:text="Charger une partie"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/nouvelle_partie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/charger_partie"
-            android:layout_marginBottom="19dp"
-            android:background="@android:color/transparent"
-            android:text="Nouvelle partie"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
-
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:text="Football Street Manager"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/chargerPartie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="51dp"
+            android:background="@android:color/transparent"
+            android:onClick="onClickChargerPartie"
+            android:text="Charger une partie"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/nouvellePartie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/chargerPartie"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/transparent"
+            android:onClick="onClickNouvellePartie"
+            android:text="Nouvelle partie"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" android:layout_marginLeft="10dp"/>
 
     </RelativeLayout>
 
