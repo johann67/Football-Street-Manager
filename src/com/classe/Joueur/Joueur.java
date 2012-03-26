@@ -19,7 +19,8 @@ public class Joueur {
 	
 	public String getRandomNom() {
 		String randomNom = "";
-
+		NameGenerator nameGenerator = new NameGenerator();
+		randomNom = nameGenerator.getName();
 		return randomNom;
 	}
 	

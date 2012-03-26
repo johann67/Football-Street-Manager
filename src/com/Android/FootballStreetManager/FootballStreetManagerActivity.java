@@ -27,6 +27,9 @@ public class FootballStreetManagerActivity extends Activity {
     }
     
     public void onClickChargerPartie(View v) {
-
+    	/*	Pour tester la génération de nom aléatoire
+    	 * Joueur joueur = new Joueur();
+    	 * Toast.makeText(this, joueur.getRandomNom(), 10).show();
+    	 */
     }
 }
