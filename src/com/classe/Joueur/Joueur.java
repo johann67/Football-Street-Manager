@@ -17,4 +17,10 @@ public class Joueur {
 		Nom = nom;
 	}
 	
+	public String getRandomNom() {
+		String randomNom = "";
+
+		return randomNom;
+	}
+	
 }
