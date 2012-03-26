@@ -23,6 +23,7 @@ public class FootballStreetManagerActivity extends Activity implements View.OnCl
         
         ButtonNew.setOnClickListener(this);
         ButtonLoad.setOnClickListener(this);
+        //chris ne sait pas coder
     }
     
     public void onClick(View v) {
