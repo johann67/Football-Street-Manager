@@ -3,5 +3,7 @@
 
     <string name="hello">Hello World, FafiStreetActivity!</string>
     <string name="app_name">Football Street Manager</string>
+    <string name="nouvellePartie">Nouvelle partie</string>
+    <string name="chargerPartie">Charger une partie</string>
 
 </resources>

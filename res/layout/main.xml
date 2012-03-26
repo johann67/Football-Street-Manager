@@ -18,7 +18,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:text="Football Street Manager"
+            android:text="@string/app_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp" />
 
@@ -31,7 +31,7 @@
             android:layout_marginBottom="51dp"
             android:background="@android:color/transparent"
             android:onClick="onClickChargerPartie"
-            android:text="Charger une partie"
+            android:text="@string/chargerPartie"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
@@ -44,7 +44,7 @@
             android:layout_marginBottom="15dp"
             android:background="@android:color/transparent"
             android:onClick="onClickNouvellePartie"
-            android:text="Nouvelle partie"
+            android:text="@string/nouvellePartie"
             android:textColor="@android:color/white"
             android:textSize="20dp" android:layout_marginLeft="10dp"/>
 
