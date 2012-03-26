@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class FafiStreetActivity extends Activity implements View.OnClickListener {
+public class FootballStreetManagerActivity extends Activity implements View.OnClickListener {
 	private Button ButtonNew;
 	private Button ButtonLoad;
 	
