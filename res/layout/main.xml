@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
@@ -32,16 +32,17 @@
             android:text="Nouvelle partie"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
-
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/charger_partie"
-            android:text="Fafi Street"
+            android:text="Football Street Manager"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp" />
+
     </RelativeLayout>
 
 </LinearLayout>
