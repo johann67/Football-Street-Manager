@@ -30,6 +30,6 @@ public class FootballStreetManagerActivity extends Activity {
     	/*	Pour tester la génération de nom aléatoire
     	 * Joueur joueur = new Joueur();
     	 * Toast.makeText(this, joueur.getRandomNom(), 10).show();
-    	 */
+    	 */ 
     }
 }
