@@ -1,4 +1,4 @@
-package com.classe.Joueur;
+package com.classe.Player;
 
 import java.util.ArrayList;
 import java.util.Arrays;
