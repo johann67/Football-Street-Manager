@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewEquipe.NewEquipe"></activity>
+        <activity android:name=".NewEquipe.NewEquipeCreation"></activity>
     </application>
 
 </manifest>

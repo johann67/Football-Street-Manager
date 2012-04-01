@@ -1,12 +1,5 @@
 package com.classe.Player;
 
-import com.Android.FootballStreetManager.Database.DataBaseHelper;
-
-import android.database.sqlite.SQLiteDatabase;
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-
 public class Player {
 	private int Id;
 	private String Name;
@@ -47,11 +40,11 @@ public class Player {
 		this.Name = name;
 	}
 	
-	public String getRandomNom() {
+	public void setRandomNom() {
 		String randomNom = "";
 		NameGenerator nameGenerator = new NameGenerator();
 		randomNom = nameGenerator.getName();
-		return randomNom;
+		this.Name =  randomNom;
 	}
 	
 	

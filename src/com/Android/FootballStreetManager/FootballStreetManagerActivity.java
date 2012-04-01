@@ -3,9 +3,9 @@ package com.Android.FootballStreetManager;
 import com.Android.FootballStreetManager.NewEquipe.*;
 import android.database.sqlite.SQLiteDatabase;
 import com.Android.FootballStreetManager.Database.DataBaseHelper;
-import com.Android.FootballStreetManager.Database.PlayerDAO;
 
 import com.classe.Player.Player;
+import com.classe.Player.Data.PlayerDAO;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,29 +25,10 @@ public class FootballStreetManagerActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
-        PlayerDAO pDao = new PlayerDAO(this);
-        pDao.open();
-        Player player = new Player(0,"Chris",1,2,3,4,5,6,"Team");
-        pDao.ajouterPlayer(player);
-        
-        tv = (TextView) findViewById(R.id.textView2);
-        Player player2 = pDao.getPlayerWithName("Chris");
-        if (player2 == null){
-        tv.setText("Pas d'entrée");
-        }
-        else {
-        tv.setText(player2.getName());
-        }
-        
-
-        
-        //Chris il est pdpdpdpdpdpd
     }
     
     public void onClickNouvellePartie(View v) {
-    	Intent intentNew = new Intent(this, NewEquipe.class);
-		startActivity(intentNew);
+		startActivity(new Intent(this, NewEquipe.class));
     }
     
     public void onClickChargerPartie(View v) {

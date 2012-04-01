@@ -1,5 +1,6 @@
-package com.Android.FootballStreetManager.Database;
+package com.classe.Player.Data;
 
+import com.Android.FootballStreetManager.Database.DataBaseHelper;
 import com.classe.Player.Player;
 
 import android.content.ContentValues;

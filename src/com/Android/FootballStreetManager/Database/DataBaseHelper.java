@@ -1,12 +1,14 @@
 package com.Android.FootballStreetManager.Database;
+import com.classe.Country.Data.CountryDAO;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
-
-        public static final String DATABASE_NAME = "football_bdd";
+   
+	public static final String DATABASE_NAME = "football_bdd";
         
     	public DataBaseHelper(Context context, String name, CursorFactory factory, int version) {
     		super(context, name, factory, version);
@@ -16,7 +18,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
                 
-                String sql = "CREATE TABLE IF NOT EXISTS players (" +
+                String sqlPlayer = "CREATE TABLE IF NOT EXISTS players (" +
                         "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "name_player TEXT, " +
                         "exp_player INTEGER, " +
@@ -26,14 +28,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                         "vitality_player INTEGER, " +
                         "age_player INTEGER, " +
                         "team_player TEXT)";
-        		db.execSQL(sql);
+        		db.execSQL(sqlPlayer);
         		
-                String sql2 = "CREATE TABLE IF NOT EXISTS profils (" +
+                String sqlProfil = "CREATE TABLE IF NOT EXISTS profils (" +
                         "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "name_profil TEXT, " +
                         "nationality_profil TEXT, " +
                         "nameTeam_profil TEXT)";
-        		db.execSQL(sql2);
+        		db.execSQL(sqlProfil);
+        		
+        		String sqlCountry = "CREATE TABLE IF NOT EXISTS country (" +
+                        "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "country TEXT)";
+        		db.execSQL(sqlCountry);
                 
         }
 
