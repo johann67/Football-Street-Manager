@@ -45,11 +45,11 @@ public class NewEquipe extends Activity {
 	}
 	
 	public void onClickCreation(View v) {
-		trainerName = (TextView) findViewById(R.id.textViewNom);
-		teamName = (TextView) findViewById(R.id.textViewNomEquipe);
+		trainerName = (TextView) findViewById(R.id.editText1);
+		teamName = (TextView) findViewById(R.id.editText2);
 		
-		if (!(trainerName.equals("") || teamName.equals(""))) {
-			Intent intentNew = new Intent(this, NewEquipe.class);
+		if (!(trainerName.getText().length() == 0 || teamName.getText().length() == 0)) {
+			Intent intentNew = new Intent(this, NewEquipeCreation.class);
 			
 			intentNew.putExtra("trainerName", trainerName.getText());
 			intentNew.putExtra("teamName", teamName.getText());
