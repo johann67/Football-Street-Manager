@@ -76,7 +76,7 @@ public class PlayerDAO {
 			return null;
  
 		c.moveToFirst();
-		Player player = new Player(c.getInt(NUM_COL_ID),c.getString(NUM_COL_NAME),c.getInt(NUM_COL_EXP),c.getInt(NUM_COL_OFFENSIVE),c.getInt(NUM_COL_DEF),c.getInt(NUM_COL_SKILL),c.getInt(NUM_COL_VITALITY),c.getInt(NUM_COL_AGE),c.getString(NUM_COL_TEAM));
+		Player player = new Player(c.getInt(NUM_COL_ID),c.getString(NUM_COL_NAME),c.getInt(NUM_COL_EXP),c.getInt(NUM_COL_OFFENSIVE),c.getInt(NUM_COL_DEF),c.getInt(NUM_COL_SKILL),c.getInt(NUM_COL_VITALITY),c.getInt(NUM_COL_AGE),c.getInt(NUM_COL_TEAM));
 		c.close();
 		return player;
 	}

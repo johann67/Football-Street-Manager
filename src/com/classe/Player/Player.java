@@ -9,9 +9,9 @@ public class Player {
 	private int Skill;
 	private int Vitality;
 	private int Age;
-	private String Team;
+	private int Team;
 	
-	public Player(int id, String name,int exp,int offensive,int def,int skill,int vitality, int age, String team){
+	public Player(int id, String name,int exp,int offensive,int def,int skill,int vitality, int age, int team){
 		this.Id = id;
 		this.Name = name;
 		this.Offensive = offensive;
@@ -22,6 +22,16 @@ public class Player {
 		this.Age = age;
 		this.Team = team;
 		
+	}
+	
+	public Player(){
+		setRandomNom();
+		this.Offensive = 20;
+		this.Exp = 20;
+		this.Def = 20;
+		this.Skill = 20;
+		this.Vitality = 20;
+		this.Age = 20;
 	}
 	
 	public int getId() {
@@ -96,11 +106,11 @@ public class Player {
 		this.Age = age;
 	}
 
-	public String getTeam() {
+	public int getTeam() {
 		return Team;
 	}
 
-	public void setTeam(String team) {
+	public void setTeam(int team) {
 		Team = team;
 	}
 	

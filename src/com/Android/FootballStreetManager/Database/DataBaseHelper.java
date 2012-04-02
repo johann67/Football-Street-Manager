@@ -27,20 +27,25 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                         "skill_player INTEGER, " +
                         "vitality_player INTEGER, " +
                         "age_player INTEGER, " +
-                        "team_player TEXT)";
+                        "team_player INTEGER)";
         		db.execSQL(sqlPlayer);
         		
                 String sqlProfil = "CREATE TABLE IF NOT EXISTS profils (" +
                         "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "name_profil TEXT, " +
-                        "nationality_profil TEXT, " +
-                        "nameTeam_profil TEXT)";
+                        "nationality_profil TEXT" +
+                        "team_profil INTEGER)";
         		db.execSQL(sqlProfil);
         		
         		String sqlCountry = "CREATE TABLE IF NOT EXISTS country (" +
                         "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        "country TEXT)";
+                        "name_country TEXT)";
         		db.execSQL(sqlCountry);
+        		
+        		String sqlTeam = "CREATE TABLE IF NOT EXISTS team (" +
+                        "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "name_team TEXT)";
+        		db.execSQL(sqlTeam);
                 
         }
 
