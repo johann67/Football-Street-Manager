@@ -19,7 +19,7 @@ public class CountryDAO {
 	private static final String TABLE_COUNTRY = "country";
 	private static final String COL_ID = "_id";
 	private static final int NUM_COL_ID = 0;
-	private static final String COL_COUNTRY = "country";
+	private static final String COL_COUNTRY = "name_country";
 	private static final int NUM_COL_COUNTRY = 1;	
 	
 	public CountryDAO(Context context){
