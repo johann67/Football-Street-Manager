@@ -1,5 +1,8 @@
 package com.classe.Player.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.Android.FootballStreetManager.Database.DataBaseHelper;
 import com.classe.Player.Player;
 
@@ -52,7 +55,7 @@ public class PlayerDAO {
 		return bdd;
 	}
 	
-	public long ajouterPlayer(Player player){
+	public long ajouterPlayer(Player player, long idTeam){
 		ContentValues values = new ContentValues();
 		values.put(COL_NAME, player.getName());
 		values.put(COL_EXP, player.getExp());
@@ -61,9 +64,25 @@ public class PlayerDAO {
 		values.put(COL_SKILL, player.getSkill());
 		values.put(COL_VITALITY, player.getVitality());
 		values.put(COL_AGE, player.getAge());
-		values.put(COL_TEAM, player.getTeam());
+		values.put(COL_TEAM, idTeam);
 
 		return bdd.insert(TABLE_PLAYERS, null, values);
+	}
+	
+	public List<Player> getPlayerWithTeam(long idTeam){
+		List<Player> listPlayer = new ArrayList<Player>();
+		
+		Cursor c = bdd.query(TABLE_PLAYERS, new String[] {COL_ID, COL_NAME, COL_EXP, COL_OFFENSIVE, COL_DEF, COL_SKILL, COL_VITALITY, COL_AGE, COL_TEAM}, COL_TEAM + " LIKE \"" + idTeam +"\"", null, null, null, null);
+		
+		if (c.getCount() == 0)
+			return null;
+		
+		while(c.moveToNext()){
+			listPlayer.add(new Player(c.getInt(NUM_COL_ID), c.getString(NUM_COL_NAME), c.getInt(NUM_COL_EXP), c.getInt(NUM_COL_OFFENSIVE), c.getInt(NUM_COL_DEF), c.getInt(NUM_COL_SKILL), c.getInt(NUM_COL_VITALITY), c.getInt(NUM_COL_AGE), c.getLong(NUM_COL_TEAM)));
+		}
+		
+		c.close();
+		return listPlayer;
 	}
 	
 	public Player getPlayerWithName(String name){

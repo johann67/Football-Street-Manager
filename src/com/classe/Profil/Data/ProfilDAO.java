@@ -2,6 +2,7 @@ package com.classe.Profil.Data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.Android.FootballStreetManager.Database.DataBaseHelper;
@@ -45,8 +46,21 @@ public class ProfilDAO {
 		
 		values.put(COL_NAME, Profil.getTrainerName());
 		values.put(COL_NATIONALITY, Profil.getCountry());
-		values.put(COL_TEAM, Profil.getTeam());
+		values.put(COL_TEAM, Profil.getTeam().getId());
 		
 		return bdd.insert(TABLE_PROFIL, null, values);
+	}
+	
+	public Profil getProfilWithId(long idProfil){
+		Cursor c = bdd.query(TABLE_PROFIL, new String[] {COL_ID, COL_NAME, COL_NATIONALITY, COL_TEAM}, COL_ID + " LIKE \"" + idProfil +"\"", null, null, null, null);
+		
+		if (c.getCount() == 0)
+			return null;
+	
+		c.moveToFirst();
+		Profil Profil = new Profil(c.getInt(NUM_COL_ID), c.getString(NUM_COL_NAME), c.getString(NUM_COL_NATIONALITY), c.getLong(NUM_COL_TEAM));
+		c.close();
+		
+		return Profil;
 	}
 }

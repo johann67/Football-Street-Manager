@@ -51,9 +51,9 @@ public class NewEquipe extends Activity {
 		if (!(trainerName.getText().length() == 0 || teamName.getText().length() == 0)) {
 			Intent intentNew = new Intent(this, NewEquipeCreation.class);
 			
-			intentNew.putExtra("trainerName", trainerName.getText());
-			intentNew.putExtra("teamName", teamName.getText());
-			intentNew.putExtra("country", country.getSelectedItem().toString());
+			intentNew.putExtra("trainerName", trainerName.getText().toString());
+			intentNew.putExtra("teamName", teamName.getText().toString());
+			intentNew.putExtra("country", country.getSelectedItem().toString().toString());
 			
 			startActivity(intentNew);
 		} else {

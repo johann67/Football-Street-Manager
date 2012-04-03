@@ -1,6 +1,4 @@
 package com.Android.FootballStreetManager.Database;
-import com.classe.Country.Data.CountryDAO;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -27,14 +25,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                         "skill_player INTEGER, " +
                         "vitality_player INTEGER, " +
                         "age_player INTEGER, " +
-                        "team_player INTEGER)";
+                        "team_player LONG)";
         		db.execSQL(sqlPlayer);
         		
                 String sqlProfil = "CREATE TABLE IF NOT EXISTS profils (" +
                         "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "name_profil TEXT, " +
-                        "nationality_profil TEXT" +
-                        "team_profil INTEGER)";
+                        "nationality_profil TEXT, " +
+                        "team_profil LONG)";
         		db.execSQL(sqlProfil);
         		
         		String sqlCountry = "CREATE TABLE IF NOT EXISTS country (" +

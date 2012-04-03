@@ -1,16 +1,38 @@
 package com.classe.Profil;
 
+import com.classe.Team.*;
+
 public class Profil {
+	private long id;
 	private String trainerName;
 	private String country;
-	private int team;
+	private long idTeam;
+	
+	private Team Team;
+	
+	public Profil(String _trainerName, String _country, Team _team) {
+		this.trainerName = _trainerName;
+		this.country = _country;
+		this.Team = _team;
+	}
+	
+	public Profil(long _id, String _trainerName, String _country, long idTeam){
+		this.id = _id;
+		this.trainerName = _trainerName;
+		this.country = _country;
+		this.idTeam = idTeam;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	public String getCountry() {
 		return country;
-	}
-	
-	public int getTeam() {
-		return team;
 	}
 	
 	public String getTrainerName() {
@@ -21,11 +43,15 @@ public class Profil {
 		this.country = country;
 	}
 	
-	public void setTeam(int team) {
-		this.team = team;
-	}
-	
 	public void setTrainerName(String trainerName) {
 		this.trainerName = trainerName;
+	}
+	
+	public Team getTeam() {
+		return Team;
+	}
+	
+	public void setTeam(Team team) {
+		Team = team;
 	}
 }

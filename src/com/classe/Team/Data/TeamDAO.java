@@ -2,6 +2,7 @@ package com.classe.Team.Data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.Android.FootballStreetManager.Database.DataBaseHelper;
@@ -40,5 +41,18 @@ public class TeamDAO {
 		values.put(COL_NAME, Team.getTeamName());
 		
 		return bdd.insert(TABLE_TEAM, null, values);
+	}
+	
+	public Team getTeamWithId(long idTeam){
+		Cursor c = bdd.query(TABLE_TEAM, new String[] {COL_ID, COL_NAME}, COL_ID + " LIKE \"" + idTeam +"\"", null, null, null, null);
+		
+		if (c.getCount() == 0)
+			return null;
+	
+		c.moveToFirst();
+		Team Team = new Team(c.getInt(NUM_COL_ID),c.getString(NUM_COL_NAME));
+		c.close();
+				
+		return Team;
 	}
 }

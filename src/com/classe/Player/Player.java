@@ -1,7 +1,7 @@
 package com.classe.Player;
 
 public class Player {
-	private int Id;
+	private long Id;
 	private String Name;
 	private int Exp;
 	private int Offensive;
@@ -9,9 +9,8 @@ public class Player {
 	private int Skill;
 	private int Vitality;
 	private int Age;
-	private int Team;
 	
-	public Player(int id, String name,int exp,int offensive,int def,int skill,int vitality, int age, int team){
+	public Player(long id, String name,int exp,int offensive,int def,int skill,int vitality, int age, long team){
 		this.Id = id;
 		this.Name = name;
 		this.Offensive = offensive;
@@ -19,9 +18,7 @@ public class Player {
 		this.Def = def;
 		this.Skill = skill;
 		this.Vitality = vitality;
-		this.Age = age;
-		this.Team = team;
-		
+		this.Age = age;		
 	}
 	
 	public Player(){
@@ -34,11 +31,15 @@ public class Player {
 		this.Age = 20;
 	}
 	
-	public int getId() {
+	public Player(long _Team) {
+		this();
+	}
+	
+	public long getId() {
 		return Id;
 	}
 	
-	public void setId(int id) {
+	public void setId(long id) {
 		Id = id;
 	}
 	
@@ -46,7 +47,7 @@ public class Player {
 		return this.Name;
 	}
 	
-	public void setNAme(String name) {
+	public void setName(String name) {
 		this.Name = name;
 	}
 	
@@ -104,14 +105,5 @@ public class Player {
 
 	public void setAge(int age) {
 		this.Age = age;
-	}
-
-	public int getTeam() {
-		return Team;
-	}
-
-	public void setTeam(int team) {
-		Team = team;
-	}
-	
+	}	
 }
